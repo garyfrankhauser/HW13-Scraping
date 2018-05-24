@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SURF DB</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container text-center">
+      <div>
+        <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+          {% for surf_dict in surf_locations %}
+          <div class="col-sm-12">
+            <div>
+              <h3>{{ surf_dict.Location }}</h3>
+              <h6>Water Temp: {{ surf_dict.WaterTemp }}</h6>
+              <h6>Air Temp: {{ surf_dict.AirTemp }}</h6>
+              <h6>Waves: {{ surf_dict.WaveHeight }}</h6>
+              <h6>Click <a href="{{ surf_dict.URL }}">here</a> for more info!</h6>
+            </div>
+          </div>
+            {% endfor %}
+
+      </div>
+    </div>
+  </body>
+
+</html>
